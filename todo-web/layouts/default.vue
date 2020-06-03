@@ -95,22 +95,41 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+      items(){
+        if(this.user){
+          return [
+            {
+              icon: "mdi-apps",
+              title: "Todos",
+              to: "/"
+            },
+            {
+              icon: "mdi-chart-bubble",
+              title: "mypage",
+              to: "/mypage"
+            }
+          ]
+        } else{
+          return [
+            {
+              icon: "mdi-apps",
+              title: "ログイン",
+              to: "/login"
+            },
+            {
+              icon: "mdi-chart-bubble",
+              title: "新規登録",
+              to: "/signup"
+            }
+          ]
         }
-      ],
+      }
+
+
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Todo App'
     }
   }
 }
