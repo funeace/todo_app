@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div v-if="user">
+    <p>{{ user.name }}</p>
     <AddTodo @submit="addTodo" />
     <TodoList :todos="todos" />
   </div>
@@ -18,6 +19,11 @@ export default {
   data(){
     return {
       todos: []
+    }
+  },
+  computed: {
+    user(){
+      return this.$store.state.currentUser
     }
   },
   methods: {
