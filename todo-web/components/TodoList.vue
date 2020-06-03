@@ -11,14 +11,10 @@
 
 <script>
 export default {
+  // 親から渡されたtodosを表示
+  props: ["todos"],
   data() {
     return {
-      todos: [
-        {
-          title: "test",
-          username: "太郎"
-        }
-      ],
       search: "",
       headers: [
         {

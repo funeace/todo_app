@@ -22,6 +22,8 @@ export default {
   },
   methods: {
     handleSubmit() {
+      // submitにtitleを送る処理(親コンポーネント)
+      this.$emit("submit",this.title)
       this.title = ""
     }
   }
