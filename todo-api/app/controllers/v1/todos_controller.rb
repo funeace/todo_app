@@ -1,18 +1,18 @@
 class V1::TodosController < ApplicationController
   def create
-    todo = Todo.new(todo_params)
+    @todo = Todo.new(todo_params)
     if todo.save
       # status: で返却するステータスを明示的に指定している
-      render json: todo, status: :created
+      render json: @todo, status: :created
     else
-      render json: todo.errors, status: :unprocessable_entity
+      render json: @todo.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    todo = Todo.find(params[:id])
+    @todo = Todo.find(params[:id])
     if todo.destroy
-      render json: todo
+      render json: @todo
     end
   end
 end
