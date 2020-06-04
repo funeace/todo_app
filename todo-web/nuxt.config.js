@@ -78,5 +78,8 @@ export default {
     standalone: true,
     extend (config, ctx) {
     }
+  },
+  router: {
+    middleware: ['router-guard']
   }
 }
